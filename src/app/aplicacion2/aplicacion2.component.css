@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    background-image: url('./pexels-cátia-matos-1072179.jpg');
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+  #formato {
+    background-color: #fff;
+    border: 3px solid #ccc;
+    width: 50%;
+    margin: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+
+ 
+
+  p {
+    margin: 2%;
+  }

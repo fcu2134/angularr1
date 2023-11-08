@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de notas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+        <div class="container-fluid">
+            
+            <!-- Segunda parte del encabezado. -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admisión</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://intranet.cftestatalaricayparinacota.cl"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Carreras</a>
+                        <ul class="dropdown-menu">
+                            <!-- Agrega elementos del menú desplegable aquí si es necesario. -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctanos</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="buscar">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="button">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="multi_bg_example">
+        <h1 class="form-label">formulario</h1>
+    </div>
+     <form  action="../aplicacion2/aplicacion2.html"          [formGroup]="form">
+        <div class="row mb-4" id="div_nombre">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" formControlName="nombre" id="nombre">
+            <small *ngIf="form.controls['nombre']?.errors?.['required'] && form.controls['nombre'].touched">
+              El nombre es requerido
+          </small>
+          <small *ngIf="form.controls['nombre']?.errors?.['minlength']">
+            el nombre debe tener almenos 4 digistos
+        </small>
+          
+        </div>
+      
+        <div class="row mb-4" id="div_apellido">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" formControlName="apellido" id="apellido">
+        
+            <small *ngIf="form.controls['apellido']?.errors?.['required'] && form.controls['apellido'].touched">
+              el apellido  es requerido
+          </small>
+          <small *ngIf="form.controls['apellido']?.errors?.['minlength']">
+            el apellido debe tener almenos 4 digistos
+        </small>
+          
+        </div>  
+        <div class="row mb-4" id="div_edad">
+            <label for="edad" class="form-label">Edad:</label>
+            <input type="number" class="form-control" formControlName="edad" id="edad">
+        
+            <small *ngIf="form.controls['edad']?.errors?.['required'] && form.controls['edad'].touched">
+              la edad es requerida
+          </small>
+          <small *ngIf="form.controls['edad']?.errors?.['minlength']">
+            la edad debe tener almenos 4 digistos
+        </small>
+        
+        </div>  
+        <button type="button" id="boton" class="btn btn-secondary btn-lg" (click)="botonEnviar()" [disabled]="!form.valid">
+            enviar
+        </button>
+    </form>
+     
+</body>
+
+</html>
